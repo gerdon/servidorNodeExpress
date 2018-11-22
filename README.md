@@ -11,26 +11,26 @@ npm init
 ### Instalar a dependência do ExpressJS
 
 ```
-npm install express --save
+npm install --save express
 ```
 
 ### Instalar a dependência do Sequelize e Sequelize-CLI
 
 ```
-npm install sequelize --save
+npm install --save sequelize
 npm install -D sequelize-cli
 ```
 
 ### Instalar a dependência do Body-Parser
 
 ```
-npm install body-parser --save
+npm install --save body-parser
 ```
 
 ### Instalar o pacote do MySQL o mysql12 para que o sequelize tenha acesso aos recursos do banco de dados definido
 
 ```
-npm install mysql2 --save
+npm install --save mysql2
 ```
 
 ### Criar arquivos iniciais do sequelize
