@@ -1,6 +1,18 @@
 const router = require('../../config/servidorTest').app;
+const service = require('../services/user.service');
 
 const { user } = require('../models/index');
+
+// Listar todos usuários
+// router.get('/users', (request, response, next) => {
+// 	console.log("Inicio")
+// 	service.findUsers().then(data => {
+// 		response.status(200).send(data);
+// 		// response.status(200).json(data);
+// 	}).catch(err => {
+// 		response.status(503).send(err);
+// 	})
+// });
 
 // Listar todos usuários
 router.get('/users', async (req, res, next) => {

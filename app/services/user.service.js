@@ -1,13 +1,14 @@
-const userModel = require('../models/user');
+const model = require('../models/user');
 
-function findAll(){
+function findUsers(){
     return new Promise((resolve, reject) => {
-        userModel.findAll().then(res => {
+        model.findAll().then(res => {
             resolve(res);
         }).catch(err => {
             console.log(`Erro ao buscar os usuários: ${err}`);
+            reject(err);
         })
     });
 }
 
-module.exports = {findAll};
+module.exports = {findUsers};
