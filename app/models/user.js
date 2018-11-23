@@ -5,5 +5,7 @@ module.exports = (sequelize, Sequelize) => {
       password: Sequelize.STRING,
     });
   
+    user.sync();
+
     return user;
 }
