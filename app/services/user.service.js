@@ -1,4 +1,5 @@
 const model = require('../models/user');
+// const model = require('../models/index');
 
 function findUsers(){
     return new Promise((resolve, reject) => {

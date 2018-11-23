@@ -14,35 +14,66 @@ const { user } = require('../models/index');
 // 	})
 // });
 
-// Listar todos usuários
-router.get('/users', async (req, res, next) => {
-	user.findAll().then(result => {
-		res.send(200, result);
-		next();
+// Buscar usuário por id
+router.get('/users', async (request, response, next) => {
+	await user.findAll({ where: { id: request.body.id } })
+	.then(data => {
+		response.send(200, data);
 	}).catch(err => {
 		console.log(err);
-	})
+		response.send(400, err);
+	});
+	next();
+});
+
+// Listar todos usuários
+router.get('/users', async (request, response, next) => {
+	await user.findAll()
+	.then(data => {
+		response.send(200, data);
+	}).catch(err => {
+		console.log(err);
+		response.send(400, err);
+	});
+	next();
 });
 
 // Criar novo usuário
-router.post('/users', async (req, res) => {
-	const userRegister = await user.create(req.body)
-		.then(res => {
-			console.log(res);
+router.post('/users', async (request, response, next) => {
+	const userRegister = await user.create(request.body)
+		.then(data => {
+			response.send(200, 'Usuário inserido com sucesso');
 		}).catch(err => {
 			console.log(err);
+			response.send(400, err);
 		});
 
-  res.json(userRegister);
+	  response.json(userRegister);
+	  next();
 });
 
-// Buscar usuário por id
-router.get('/users/:id', (req, res) => {});
-
 // Editar usuário
-router.put('/users/:id', (req, res) => {});
+router.put('/users', async (request, response, next) => {
+	await user.update(request.body, { where: { id: request.body.id } })
+	.then(data => {
+		response.send(200, 'Usuário atualizado com sucesso');
+	}).catch(err => {
+		console.log(err);
+		response.send(400, err);
+	});
+	next();
+});
 
 // Deletar usuário
-router.delete('/users/:id', (req, res) => {});
+router.delete('/users', async (request, response, next) => {
+	await user.destroy({ where: { id: request.body.id } })
+	.then(data => {
+		response.send(200, 'Usuário excluído com sucesso');
+	}).catch(err => {
+		console.log(err);
+		response.send(400, err);
+	});
+	next();
+});
 
 module.exports = router;
