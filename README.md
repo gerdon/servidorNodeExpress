@@ -39,10 +39,13 @@ npm install --save mysql2
 node_modules/.bin/sequelize init
 ```
 
-### Criar migration 
+## Migrations
+
+### Criar migration para banco de dados
 
 ```
 node_modules/.bin/sequelize migration:create --name=create-users
+node_modules/.bin/sequelize migration:create --name=create-filmes
 ```
 
 ### Testar se as migration está funcionando corretamente

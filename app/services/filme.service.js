@@ -1,6 +1,6 @@
-const model = require("../models/index").user;
+const model = require("../models/index").filme;
 
-function findUsers() {
+function findFilmes() {
   return new Promise((resolve, reject) => {
     model
       .findAll()
@@ -8,13 +8,13 @@ function findUsers() {
         resolve(res);
       })
       .catch(err => {
-        console.log(`Erro ao buscar os usuários: ${err}`);
+        console.log(`Erro ao buscar o catálago filmes: ${err}`);
         reject(err);
       });
   });
 }
 
-function findByIdUser(data) {
+function findByIdFilme(data) {
     return new Promise((resolve, reject) => {
       model
         .findAll({ where: { id: data.id } })
@@ -22,49 +22,49 @@ function findByIdUser(data) {
           resolve(res);
         })
         .catch(err => {
-          console.log(`Erro ao buscar o usuário: ${err}`);
+          console.log(`Erro ao buscar o filme: ${err}`);
           reject(err);
         });
     });
   }
 
-function createUser(data) {
+function createFilme(data) {
     return new Promise((resolve, reject) => {
         model
         .create(data)
         .then(res => {
             resolve(res);
         }).catch(err => {
-            console.log(`Erro ao criar o usuário: ${err}`);
+            console.log(`Erro ao criar o filme: ${err}`);
             reject(err);
         });
     });
 }
 
-function updateUser(data) {
+function updateFilme(data) {
     return new Promise((resolve, reject) => {
         model
         .update(data, { where: { id: data.id } })
         .then(res => {
             resolve(res);
         }).catch(err => {
-            console.log(`Erro ao atualizar o usuário: ${err}`);
+            console.log(`Erro ao atualizar o filme: ${err}`);
             reject(err);
         });
     });
 }
 
-function deleteUser(data) {
+function deleteFilme(data) {
     return new Promise((resolve, reject) => {
         model
         .destroy({ where: { id: data.id } })
         .then(res => {
             resolve(res);
         }).catch(err => {
-            console.log(`Erro ao deletar o usuário: ${err}`);
+            console.log(`Erro ao deletar o filme: ${err}`);
             reject(err);
         });
     });
 }
 
-module.exports = {findUsers, createUser, updateUser, deleteUser, findByIdUser};
+module.exports = {findFilmes, createFilme, updateFilme, deleteFilme, findByIdFilme};

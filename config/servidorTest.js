@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const port = 3000;
 
-const { user } = require('../app/models/index');
+// const { user } = require('../app/models/index');
 
 const app = express();
 
