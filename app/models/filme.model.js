@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
   const filme = sequelize.define("filme", {
-    imagem: Sequelize.STRING,
+    imagem: Sequelize.BLOB,
     nome: Sequelize.STRING,
     categoria: Sequelize.STRING,
     duracao: Sequelize.STRING

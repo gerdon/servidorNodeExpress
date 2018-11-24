@@ -37,7 +37,6 @@ router.post("/filmes/id", async (request, response, next) => {
  * Criar novo filme
  */
 router.post("/filmes", async (request, response, next) => {
-  // const filmeRegister = await service
   await service
     .createFilme(request.body)
     .then(data => {
@@ -47,8 +46,6 @@ router.post("/filmes", async (request, response, next) => {
       console.log(err);
       response.status(503).send(err);
     });
-
-  // response.json(filmeRegister);
   next();
 });
 

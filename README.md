@@ -1,11 +1,18 @@
-# Servidor NodeJS com Express e Sequelize
+# SERVIDOR NODEJS COM EXPRESS E SEQUELIZE
+    Este é um servidor NodeJS utilizando o framework Express JS, o Sequelize e Migrations para configurar banco de dados relacionais.
 
 ## Configurar ambiente
+    Abaixo é segue os passos em ordem para configurar o ambiente.
 
-### Iniciar um repositório node
+## DEPENDÊNCIAS
+### Instalar as dependências do projeto clonado (All)
 
 ```
-npm init 
+npm install
+```
+ou
+```
+npm i
 ```
 
 ### Instalar a dependência do ExpressJS
@@ -27,28 +34,31 @@ npm install -D sequelize-cli
 npm install --save body-parser
 ```
 
-### Instalar o pacote do MySQL o mysql12 para que o sequelize tenha acesso aos recursos do banco de dados definido
+### Instalar o pacote do MySQL, o mysql12 para que o sequelize tenha acesso aos recursos do banco de dados definido
 
 ```
 npm install --save mysql2
 ```
 
-### Criar arquivos iniciais do sequelize
+### Criar arquivos iniciais de configuração do sequelize
 
 ```
 node_modules/.bin/sequelize init
 ```
 
-## Migrations
+## MIGRATIONS
 
 ### Criar migration para banco de dados
+    -- Scripts para tabelas de banco de dados:
+        - filmes
+        - users
 
 ```
-node_modules/.bin/sequelize migration:create --name=create-users
 node_modules/.bin/sequelize migration:create --name=create-filmes
+node_modules/.bin/sequelize migration:create --name=create-users
 ```
 
-### Testar se as migration está funcionando corretamente
+### Executa as migrations geradas para o banco de dados
 
 ```
 node_modules/.bin/sequelize db:migrate
