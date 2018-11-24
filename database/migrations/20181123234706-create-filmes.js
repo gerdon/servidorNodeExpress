@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -10,38 +10,38 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
 
-    return queryInterface.createTable('filmes', { 
+    return queryInterface.createTable("filmes", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       imagem: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       nome: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
+        unique: true
       },
       categoria: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       duracao: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
 
@@ -54,6 +54,6 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
 
-   return queryInterface.dropTable('filmes');
+    return queryInterface.dropTable("filmes");
   }
 };
