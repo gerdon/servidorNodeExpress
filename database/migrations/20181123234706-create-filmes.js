@@ -17,14 +17,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      // imagem: {
-      //   allowNull: false,
-      //   type: Sequelize.STRING
-      // },
       imagem: {
         allowNull: false,
-        type: Sequelize.BLOB
+        type: Sequelize.STRING
       },
+      // imagem: {
+      //   allowNull: false,
+      //   type: Sequelize.BLOB
+      // },
       nome: {
         allowNull: false,
         type: Sequelize.STRING,
