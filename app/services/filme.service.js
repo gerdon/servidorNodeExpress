@@ -42,20 +42,6 @@ function createFilme(data) {
   });
 }
 
-// function createFilme(data) {
-//   return new Promise((resolve, reject) => {
-
-//     model
-//       .query('INSERT INTO filmes VALUES ?, ?, ?, ?', { 
-//         replacements: [data.imagem, data.nome, data.categoria, data.duracao], 
-//         type: Sequelize.QueryTypes.INSERT
-//       })
-//       .spread((results, metadata) => {
-//         resolve(results);
-//       });
-//   });
-// }
-
 function updateFilme(data) {
   return new Promise((resolve, reject) => {
     model

@@ -19,12 +19,8 @@ module.exports = {
       },
       imagem: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT('medium')
       },
-      // imagem: {
-      //   allowNull: false,
-      //   type: Sequelize.BLOB
-      // },
       nome: {
         allowNull: false,
         type: Sequelize.STRING,

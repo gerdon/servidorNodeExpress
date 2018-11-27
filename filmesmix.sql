@@ -19,7 +19,7 @@ USE `filmesmix`;
 -- Copiando estrutura para tabela filmesmix.filmes
 CREATE TABLE IF NOT EXISTS `filmes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imagem` blob NOT NULL,
+  `imagem` mediumtext NOT NULL,
   `nome` varchar(255) NOT NULL,
   `categoria` varchar(255) NOT NULL,
   `duracao` varchar(255) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `filmes` (
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela filmesmix.sequelizemeta
