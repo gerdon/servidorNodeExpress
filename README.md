@@ -46,6 +46,12 @@ npm install --save mysql2
 node_modules/.bin/sequelize init
 ```
 
+## BANCO DE DADOS
+
+```
+execute o script filmesmix.sql em um banco de dados MySQL para criar o esquema de banco dados
+```
+
 ## MIGRATIONS
 
 ### Criar migration para banco de dados
